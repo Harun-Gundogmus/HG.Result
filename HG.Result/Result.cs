@@ -11,21 +11,21 @@ public sealed class Result<T>
     public T? Data { get; set; }
     public List<string>? ErrorMessages { get; set; }
     public bool IsSuccessful { get; set; } = true;
-    public HttpStatusCode StatusCode { get; set; } = HttpStatusCode.OK;
+    public int StatusCode { get; set; } = (int)HttpStatusCode.OK;
 
     public Result(T data)
     {
         Data = data;
     }
 
-    public Result(HttpStatusCode statusCode, List<string> errorMessage)
+    public Result(int statusCode, List<string> errorMessage)
     {
         IsSuccessful = false;
         StatusCode = statusCode;
         ErrorMessages = errorMessage;
     }
 
-    public Result(HttpStatusCode statusCode, string errorMessage)
+    public Result(int statusCode, string errorMessage)
     {
         IsSuccessful = false;
         StatusCode = statusCode;
@@ -37,12 +37,12 @@ public sealed class Result<T>
         return new(data);
     }
 
-    public static implicit operator Result<T>((HttpStatusCode statusCode, List<string> errorMessage) parameters)
+    public static implicit operator Result<T>((int statusCode, List<string> errorMessage) parameters)
     {
         return new(parameters.statusCode, parameters.errorMessage);
     }
 
-    public static implicit operator Result<T>((HttpStatusCode statusCode, string errorMessage) parameters)
+    public static implicit operator Result<T>((int statusCode, string errorMessage) parameters)
     {
         return new(parameters.statusCode, parameters.errorMessage);
     }
