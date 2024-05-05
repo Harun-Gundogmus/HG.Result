@@ -6,7 +6,7 @@
     <Nullable>enable</Nullable>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <Title>Result Pattern</Title>
-    <Version>8.0.4</Version>
+    <Version>8.0.5</Version>
     <Description>This is a result class for .NET</Description>
     <Copyright>© 2024 Harun Gündoğmuş. All rights reserved.</Copyright>
     <PackageReadmeFile>README.md</PackageReadmeFile>
