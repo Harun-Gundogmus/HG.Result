@@ -51,6 +51,16 @@ Result<string> result = (400, new List<string> {"Error 1", "Error 2"});
 Result<string> result = (400, "Single error message");
 ````
 
+** For success using Succeed method**:
+````csharp
+Result<string> result = Result<string>.Succeed("Is successful");
+````
+
+** For failure using Failure method**:
+````csharp
+Result<string> result = Result<string>.Failure(500, "Is fail");
+````
+
 ## Contributing
 We welcome contributions! Feel free to open an issue or submit a pull request on our Github repository for any suggestions and improvements.
 
